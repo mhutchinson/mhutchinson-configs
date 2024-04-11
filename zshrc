@@ -2,6 +2,7 @@
 # - tmux
 # - tmuxinator
 # - fzf
+# - eza
 #
 # First install oh-my-zsh and required plugins:
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -13,7 +14,7 @@ export PATH=/opt/homebrew/bin:$PATH:/usr/local/go/bin:~/bin:$GOPATH/bin:
 export TAMAGO=/home/mhutchinson/Download/tamago1.21.5/bin/go
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/mhutchinson/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
