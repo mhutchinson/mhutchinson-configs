@@ -44,10 +44,10 @@ plugins=(
 	ssh-agent
 	fzf
 	tmuxinator
-	fzf-tab
 	zsh-z
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+	fzf-tab
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -86,6 +86,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+enable-fzf-tab
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
