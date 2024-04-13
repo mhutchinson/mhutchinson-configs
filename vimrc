@@ -1,4 +1,4 @@
-:colorscheme elflord
+colorscheme elflord
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -15,5 +15,9 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
+set history=200
+
 set wildmenu
 set wildmode=full
+
+set nu relativenumber
