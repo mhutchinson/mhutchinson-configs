@@ -14,3 +14,6 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
+
+set wildmenu
+set wildmode=full
