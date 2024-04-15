@@ -84,6 +84,9 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=#00BFFF'
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=#00BFFF'
+
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 enable-fzf-tab
