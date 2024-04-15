@@ -20,7 +20,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export GOPATH=~/go
-export PATH=/opt/homebrew/bin:$PATH:/usr/local/go/bin:~/bin:$GOPATH/bin:
+export PATH=/opt/homebrew/bin:$PATH:/usr/local/go/bin:~/bin:$GOPATH/bin:/opt/nvim/bin
 export TAMAGO=/home/mhutchinson/Download/tamago1.21.5/bin/go
 
 # Path to your oh-my-zsh installation.
@@ -41,7 +41,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
 	git
 	golang
-	ssh-agent
 	fzf
 	tmuxinator
 	zsh-z
