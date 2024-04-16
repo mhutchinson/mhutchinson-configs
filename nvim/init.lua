@@ -262,6 +262,7 @@ require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 	"tpope/vim-unimpaired",
 	"tpope/vim-surround",
+	"tpope/vim-fugitive",
 	{
 		"hedyhli/outline.nvim",
 		config = function()
