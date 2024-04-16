@@ -263,6 +263,28 @@ require("lazy").setup({
 	"tpope/vim-unimpaired",
 	"tpope/vim-surround",
 	{
+		"hedyhli/outline.nvim",
+		config = function()
+			-- Example mapping to toggle outline
+			vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+
+			require("outline").setup({
+				outline_window = {
+					auto_close = true,
+				},
+				preview_window = {
+					auto_preview = true,
+				},
+			})
+		end,
+	},
+	{
+		"rmagatti/auto-session",
+		opts = {
+			log_level = "error",
+		},
+	},
+	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
