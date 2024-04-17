@@ -6,7 +6,7 @@
 #
 # First install oh-my-zsh and required plugins:
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
+# >>>> https://github.com/ajeetdsouza/zoxide <<<<
 # git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -43,7 +43,6 @@ plugins=(
 	golang
 	fzf
 	tmuxinator
-	zsh-z
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	fzf-tab
@@ -69,6 +68,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 fixssh() {
   eval $(tmux show-env -s |grep '^SSH_')
 }
+
+eval "$(zoxide init zsh --cmd cd)"
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
