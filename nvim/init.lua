@@ -547,6 +547,12 @@ require("lazy").setup({
 			-- - sr)'  - [S]urround [R]eplace [)] [']
 			require("mini.surround").setup()
 
+			require("mini.bracketed").setup()
+
+			require("mini.jump").setup()
+			require("mini.jump2d").setup()
+			vim.keymap.set("n", "<leader>jj", MiniJump2d.start, { desc = "Jump to anywhere in the document" })
+
 			-- Simple and easy statusline.
 			--  You could remove this setup call if you don't like it,
 			--  and try some other statusline plugin
@@ -591,6 +597,7 @@ require("lazy").setup({
 	{ import = "mhutchinson.theme" },
 	{ import = "mhutchinson.tabs" },
 	{ import = "mhutchinson.outline" },
+	{ import = "mhutchinson.leap" },
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
