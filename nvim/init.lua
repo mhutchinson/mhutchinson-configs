@@ -264,22 +264,6 @@ require("lazy").setup({
 	"tpope/vim-surround",
 	"tpope/vim-fugitive",
 	{
-		"hedyhli/outline.nvim",
-		config = function()
-			-- Example mapping to toggle outline
-			vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
-
-			require("outline").setup({
-				outline_window = {
-					auto_close = true,
-				},
-				preview_window = {
-					auto_preview = true,
-				},
-			})
-		end,
-	},
-	{
 		"rmagatti/auto-session",
 		opts = {
 			log_level = "error",
@@ -700,7 +684,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-
 	{ -- Autoformat
 		"stevearc/conform.nvim",
 		lazy = false,
@@ -774,20 +757,32 @@ require("lazy").setup({
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"hrsh7th/cmp-path",
+			"windwp/nvim-autopairs",
 		},
+		-- {
+		-- 	"windwp/nvim-autopairs",
+		-- 	event = "InsertEnter",
+		-- 	config = true,
+		-- 	-- use opts = {} for passing setup options
+		-- 	-- this is equalent to setup({}) function
+		-- },
 		config = function()
+			-- vim.o.completeopt = "menuone,noselect,preview"
 			-- See `:help cmp`
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 			luasnip.config.setup({})
 
 			cmp.setup({
+				-- preselect = cmp.PreselectMode.None,
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
 					end,
 				},
-				completion = { completeopt = "menu,menuone,noinsert" },
+				completion = {
+					completeopt = "menu,menuone,noinsert",
+				},
 
 				-- For an understanding of why these mappings were
 				-- chosen, you will need to read `:help ins-completion`
@@ -807,7 +802,7 @@ require("lazy").setup({
 					--  This will auto-import if your LSP supports it.
 					--  This will expand snippets if the LSP sent a snippet.
 					["<C-y>"] = cmp.mapping.confirm({ select = true }),
-					["<C-m>"] = cmp.mapping.confirm({ select = true }),
+					["<CR>"] = cmp.mapping.disable,
 
 					-- Manually trigger a completion from nvim-cmp.
 					--  Generally you don't need this, because nvim-cmp will display
@@ -843,30 +838,16 @@ require("lazy").setup({
 					{ name = "path" },
 				},
 			})
-		end,
-	},
-
-	{ -- You can easily change to a different colorscheme.
-		-- Change the name of the colorscheme plugin below, and then
-		-- change the command in the config to whatever the name of that colorscheme is.
-		--
-		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-		"folke/tokyonight.nvim",
-		priority = 1000, -- Make sure to load this before all the other start plugins.
-		init = function()
-			-- Load the colorscheme here.
-			-- Like many other themes, this one has different styles, and you could load
-			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("tokyonight-night")
-
-			-- You can configure highlights by doing something like:
-			vim.cmd.hi("Comment gui=none")
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+			require("nvim-autopairs").setup({ check_ts = true })
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		end,
 	},
 
 	-- Highlight todo, notes, etc in comments
 	{
-		"folke/todo-comments.nvim",
+		"ynhhoJ/todo-comments.nvim",
+		--"folke/todo-comments.nvim",
 		event = "VimEnter",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = { signs = false },
@@ -913,7 +894,24 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		opts = {
-			ensure_installed = { "bash", "c", "go", "html", "lua", "luadoc", "markdown", "vim", "vimdoc" },
+			ensure_installed = {
+				"bash",
+				"c",
+				"comment",
+				"go",
+				"html",
+				"gitignore",
+				"jq",
+				"lua",
+				"luadoc",
+				"make",
+				"markdown",
+				"ssh_config",
+				"terraform",
+				"vim",
+				"vimdoc",
+				"yaml",
+			},
 			-- Autoinstall languages that are not installed
 			auto_install = true,
 			highlight = {
@@ -977,12 +975,9 @@ require("lazy").setup({
 	-- require 'kickstart.plugins.indent_line',
 	-- require 'kickstart.plugins.lint',
 
-	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-	--    This is the easiest way to modularize your config.
-	--
-	--  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
 	--    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-	-- { import = 'custom.plugins' },
+	{ import = "mhutchinson.theme" },
+	{ import = "mhutchinson.outline" },
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
