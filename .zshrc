@@ -19,6 +19,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export EDITOR=nvim
 export GOPATH=~/go
 export PATH=/opt/homebrew/bin:$PATH:/usr/local/go/bin:~/bin:~/.local/bin:$GOPATH/bin:/opt/nvim/bin
 export TAMAGO=/home/mhutchinson/Download/tamago1.21.5/bin/go
