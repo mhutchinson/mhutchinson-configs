@@ -115,6 +115,9 @@ return {
 					{ name = "luasnip" },
 					{ name = "path" },
 				},
+				experimental = {
+					ghost_text = true,
+				},
 			})
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 			require("nvim-autopairs").setup({ check_ts = true })
