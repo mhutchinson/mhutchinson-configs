@@ -597,6 +597,7 @@ require("lazy").setup({
 	{ import = "mhutchinson.autoformat" },
 	{ import = "mhutchinson.comments" },
 	{ import = "mhutchinson.go" },
+	{ import = "mhutchinson.spider" },
 	{ import = "mhutchinson.theme" },
 	{ import = "mhutchinson.tabs" },
 	{ import = "mhutchinson.outline" },
