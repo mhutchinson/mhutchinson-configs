@@ -598,6 +598,7 @@ require("lazy").setup({
 	{ import = "mhutchinson.comments" },
 	{ import = "mhutchinson.go" },
 	{ import = "mhutchinson.spider" },
+	{ import = "mhutchinson.oil" },
 	{ import = "mhutchinson.theme" },
 	{ import = "mhutchinson.tabs" },
 	{ import = "mhutchinson.outline" },
