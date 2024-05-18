@@ -248,6 +248,9 @@ require("lazy").setup({
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
+	{
+		import = "mhutchinson",
+	},
 
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
@@ -590,21 +593,6 @@ require("lazy").setup({
 	-- require 'kickstart.plugins.lint',
 
 	--    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-	{ import = "mhutchinson.telescope" },
-	{ import = "mhutchinson.helpers" },
-	{ import = "mhutchinson.treesitter" },
-	{ import = "mhutchinson.autocomplete" },
-	{ import = "mhutchinson.autoformat" },
-	{ import = "mhutchinson.comments" },
-	{ import = "mhutchinson.go" },
-	{ import = "mhutchinson.spider" },
-	{ import = "mhutchinson.oil" },
-	{ import = "mhutchinson.neogit" },
-	{ import = "mhutchinson.theme" },
-	{ import = "mhutchinson.tabs" },
-	{ import = "mhutchinson.outline" },
-	{ import = "mhutchinson.leap" },
-	{ import = "mhutchinson.trouble" },
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
