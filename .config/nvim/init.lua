@@ -557,7 +557,7 @@ require("lazy").setup({
 
 			require("mini.jump").setup()
 			require("mini.jump2d").setup()
-			vim.keymap.set("n", "<leader>jj", MiniJump2d.start, { desc = "Jump to anywhere in the document" })
+			-- vim.keymap.set("n", "<leader>jj", MiniJump2d.start, { desc = "Jump to anywhere in the document" })
 
 			-- Simple and easy statusline.
 			--  You could remove this setup call if you don't like it,
