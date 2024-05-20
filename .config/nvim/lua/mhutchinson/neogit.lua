@@ -10,5 +10,19 @@ return {
 			-- "ibhagwan/fzf-lua", -- optional
 		},
 		config = true,
+		keys = {
+			{
+				"<leader>Gs",
+				"<CMD>Neogit<CR>",
+				mode = "n",
+				desc = "Git Status",
+			},
+			{
+				"<leader>Gb",
+				"<CMD>Git blame<CR>",
+				mode = "n",
+				desc = "Git Blame",
+			},
+		},
 	},
 }
