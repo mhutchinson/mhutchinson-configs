@@ -132,11 +132,14 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  programs.zsh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mhutchinson = {
     isNormalUser = true;
     description = "Martin Hutchinson";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
       brave
@@ -148,10 +151,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  programs.zsh = {
-    enable = true;
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
