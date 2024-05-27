@@ -170,9 +170,13 @@
     xclip
     zoxide
 
+    # nix stuff
+    nix-search-cli
+
     # Window manager stuff
     i3
     rofi
+    qutebrowser
 
     # Languages
     cargo

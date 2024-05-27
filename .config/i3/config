@@ -114,9 +114,9 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "terminals"
-set $ws2 "browser"
-set $ws3 "coding"
+set $ws1 "1: terminals"
+set $ws2 "2: browser"
+set $ws3 "3: coding"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -126,8 +126,9 @@ set $ws9 "9"
 set $ws10 "10"
 
 assign [class="firefox"] $ws2
+assign [class="qutebrowser"] $ws2
 
-exec firefox
+exec qutebrowser
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
