@@ -94,6 +94,15 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 enable-fzf-tab
 
+# Copy this to ~/.oh-my-zsh/custom/traps.zsh
+# function __trap_exit_tmux {
+# 	test $(tmux list-windows | wc -l) = 1 || exit
+# 	test $(tmux list-panes | wc -l) = 1 || exit
+# 	tmux switch-client -t 0
+# }
+#
+# [[ -o interactive ]] && trap __trap_exit_tmux EXIT
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
