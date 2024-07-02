@@ -142,7 +142,7 @@
     shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
-      brave
+    #  brave
     ];
   };
 
@@ -161,6 +161,7 @@
     git
     kitty
     neovim
+    obsidian
     picom
     tldr
     tmux

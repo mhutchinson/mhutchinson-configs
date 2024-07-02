@@ -117,7 +117,7 @@ bindsym $mod+a focus parent
 set $ws1 "1: terminals"
 set $ws2 "2: browser"
 set $ws3 "3: coding"
-set $ws4 "4"
+set $ws4 "4: obsidian"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -127,8 +127,10 @@ set $ws10 "10"
 
 assign [class="firefox"] $ws2
 assign [class="qutebrowser"] $ws2
+assign [class="obsidian"] $ws4
 
 exec qutebrowser
+exec obsidian
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
