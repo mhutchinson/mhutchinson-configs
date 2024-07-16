@@ -19,7 +19,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export SHELL=zsh
+#export SHELL=zsh
 export EDITOR=nvim
 export GOPATH=~/go
 export PATH=/opt/homebrew/bin:$PATH:/usr/local/go/bin:~/bin:~/.local/bin:$GOPATH/bin:/opt/nvim/bin

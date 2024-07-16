@@ -5,6 +5,12 @@ return {
 			"ray-x/guihua.lua",
 			"neovim/nvim-lspconfig",
 			"nvim-treesitter/nvim-treesitter",
+
+			-- package for DAP (debugger)
+			"mfussenegger/nvim-dap",
+			"rcarriga/nvim-dap-ui",
+			"nvim-neotest/nvim-nio",
+			"theHamsta/nvim-dap-virtual-text",
 		},
 		config = function()
 			require("go").setup()
