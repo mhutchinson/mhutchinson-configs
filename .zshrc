@@ -23,7 +23,7 @@ fi
 export EDITOR=nvim
 export GOPATH=~/go
 export GOBIN=~/bin
-export PATH=/opt/homebrew/bin:$PATH:/usr/local/go/bin:~/bin:~/.local/bin:$GOPATH/bin:/opt/nvim/bin
+export PATH=/opt/homebrew/bin:$PATH:~/bin:/usr/local/go/bin:~/.local/bin:$GOPATH/bin:/opt/nvim/bin
 export TAMAGO=/home/mhutchinson/Download/tamago1.21.5/bin/go
 
 # Path to your oh-my-zsh installation.
