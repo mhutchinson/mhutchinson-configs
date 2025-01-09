@@ -97,19 +97,16 @@
 
   fonts.packages = with pkgs; [
     hermit
-    nerdfonts
     source-code-pro
     terminus_font
-  ];
+  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   security.rtkit.enable = true;
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio = {
+  services.pulseaudio = {
     enable = false;
   };
   services.pipewire = {
